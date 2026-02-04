@@ -1,5 +1,9 @@
 # This is a sample Python script.
+# import statments
 from flask import Flask, render_template, render_template_string, request
+
+
+from indexintext import getindextext
 app = Flask(__name__)
 
 # Press Shift+F10 to execute it or replace it with your code.
@@ -7,7 +11,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template_string(getindextext())
 
 
 
