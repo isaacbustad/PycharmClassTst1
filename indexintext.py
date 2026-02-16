@@ -1,10 +1,28 @@
+from conversion import convertbinary
+
 def getindextext():
     html = buildindextext()
     return html
 
 def buildindextext():
-    html = htmlstart + headerstart + """This is a header test""" + headerend + htmlend
+    html = htmlstart + headerstart + """This is a header test""" + headerend + buildindexbodyhtml() + htmlend
     return html
+
+# build index body here
+# construct bodt text
+# loop throug returned array
+def buildindexbodyhtml():
+    rettext = openbody
+
+    for item in convertbinary():
+        textitem = """<p>""" + item + """</p>"""
+        rettext += textitem
+
+    rettext += closebody
+
+
+
+    return rettext
 
 #------------------------------
 # start building a table

@@ -12,9 +12,9 @@
 
 # binary value represented as a string
 # assume 8 bit leangth
-def binarytodecimal(aStr = "11111111"):
+def binarytodecimal(aStr = "1.1.1.1.1.1.1.1"):
     # aStr will be 8 characters long
-    binarystringarr = aStr.strip().split()
+    binarystringarr = aStr.strip().split('.')
 
     # holds value of each place of binary
     binaryvaluearr = [128,64,32,16,8,4,2,1]
@@ -26,7 +26,10 @@ def binarytodecimal(aStr = "11111111"):
 
     for binstring in binarystringarr:
         # convert the binary digit to integer value
-        convertedbinarydigit = int(binstring)
+        if binstring == "1":
+            convertedbinarydigit = 1
+        else:
+            convertedbinarydigit = 0
 
         # convert binary digit to decimal value
         convertedbinaryvalue = convertedbinarydigit * binaryvaluearr[idxval]

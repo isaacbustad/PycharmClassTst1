@@ -10,6 +10,11 @@ app = Flask(__name__)
 def index():
     return render_template_string(getindextext())
 
+@app.route("/temeratureconversions")
+def temeratureconversions():
+    return render_template("temeratureconversions.html")
+
+
 
 
 # run only if we are the main script
